@@ -53,12 +53,6 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 
 
 
-
-
-
-
-
-
 resource "aws_instance" "web" {
   count         = 5
   ami           = data.aws_ami.ubuntu.id
@@ -81,3 +75,23 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+variable domain_name {
+    description = "The domain name for the route53 zone"
+}
+
+
+
+data "aws_route53_zone" "selected" {
+  name         = var.domain_name
+  private_zone = false
+}
+
+resource "aws_route53_record" "blogs" {
+  zone_id = data.aws_route53_zone.selected.zone_id
+  name    = "blogs.${data.aws_route53_zone.selected.name}"
+  type    = "A"
+  ttl     = "300"
+  records = [aws_instance.web.public_ip]
+}
+
