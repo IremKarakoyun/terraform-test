@@ -27,7 +27,7 @@ module "asg" {
 
   min_size                  = 1
   max_size                  = 99
-  desired_capacity          = 33
+  desired_capacity          = 3
   wait_for_capacity_timeout = 0
   health_check_type         = "EC2"
   availability_zones = [
