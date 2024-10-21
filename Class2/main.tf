@@ -74,7 +74,7 @@ resource "aws_instance" "web" {
               apt-get install apache2 -y
               systemctl start apache2
               systemctl enable apache2
-              echo "<h1>Welcome to Terraform Class 2</h1>" > /var/www/html/index.html
+              echo "<h1>can you bring me a glass of Ice Tea Please</h1>" > /var/www/html/index.html
               EOF
 
   tags = {
