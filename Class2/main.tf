@@ -28,7 +28,7 @@ resource "aws_security_group" "terraform_class" {
   description = "Allow TLS inbound traffic and all outbound traffic"
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow_tls_443" {
+resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
   security_group_id = aws_security_group.terraform_class.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = 443
