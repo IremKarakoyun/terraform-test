@@ -18,6 +18,7 @@ resource "aws_instance" "web" {
   count         = 5
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
+  availability_zone = "us-east-1"
 
   tags = {
     Name = "HelloWorld"
