@@ -14,6 +14,14 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
+
+resource "aws_key_pair" "apr2024" {
+  key_name   = "apr2024-key"
+  public_key = file("~/.ssh/id_rsa.pub")
+}
+
+
+
 resource "aws_instance" "web" {
   count         = 5
   ami           = data.aws_ami.ubuntu.id
