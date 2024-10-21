@@ -27,6 +27,7 @@ resource "aws_instance" "web" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
   availability_zone = "us-east-1"
+  key_name = aws_key_pair.apr2024.key_name
   user_data = <<-EOF
               #!/bin/bash
               apt-get update -y
