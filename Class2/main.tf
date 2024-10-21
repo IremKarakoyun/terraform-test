@@ -54,7 +54,6 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
 
 
 resource "aws_instance" "web" {
-  count         = 5
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t3.micro"
   availability_zone = "us-east-1a"
