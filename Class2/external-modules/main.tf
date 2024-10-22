@@ -86,14 +86,6 @@ resource "aws_default_subnet" "default_az3" {
 
 
 
-
-
-
-
-
-
-
-
 module "alb" {
   source = "terraform-aws-modules/alb/aws"
   name    = "my-alb"
@@ -127,3 +119,15 @@ module "alb" {
     }
   }
 } 
+
+
+
+
+resource "aws_instance" "web" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+
+  tags = {
+    Name = "terraform-test"
+  }
+}
