@@ -133,3 +133,10 @@ resource "aws_instance" "web" {
 }
 
 
+resource "aws_instance" "important" {
+  ami           = data.aws_ami.ubuntu.id
+  instance_type = "t3.micro"
+  tags = {
+    Name = "Important Instance imported by me"
+  }
+}
