@@ -89,6 +89,7 @@ resource "aws_default_subnet" "default_az3" {
 module "alb" {
   source = "terraform-aws-modules/alb/aws"
   name    = "my-alb"
+  enable_deletion_protection = false
   subnets = [
     aws_default_subnet.default_az1.id,
     aws_default_subnet.default_az2.id,
