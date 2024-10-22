@@ -131,3 +131,8 @@ resource "aws_instance" "web" {
     Name = "terraform-test"
   }
 }
+
+
+output all {
+  value = aws_instance.web
+}
