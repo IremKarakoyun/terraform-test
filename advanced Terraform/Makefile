@@ -20,19 +20,16 @@ oregon:
 	terraform apply -var-file envs/oregon.tfvars -auto-approve
 
 destroy-virginia:
-	terraform workspace new virginia || \
 	terraform workspace  select   virginia && \
 	terraform   init   && \
 	terraform  destroy  -var-file   envs/virginia.tfvars  -auto-approve
 
 destroy-ohio:
-	terraform workspace new ohio || \
 	terraform workspace  select   ohio && \
 	terraform   init   && \
 	terraform  destroy  -var-file   envs/ohio.tfvars  -auto-approve
 
 destroy-oregon:
-	terraform workspace new oregon || \
 	terraform workspace  select   oregon && \
 	terraform   init   && \
 	terraform  destroy  -var-file   envs/oregon.tfvars  -auto-approve
