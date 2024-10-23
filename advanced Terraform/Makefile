@@ -36,3 +36,8 @@ destroy-oregon:
 	terraform workspace  select   oregon && \
 	terraform   init   && \
 	terraform  destroy  -var-file   envs/oregon.tfvars  -auto-approve
+
+destroy-all:
+	make destroy-virginia && \
+	make destroy-ohio && \
+	make destroy-oregon && \
