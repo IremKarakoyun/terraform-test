@@ -8,13 +8,13 @@ virginia:
 	terraform apply -var-file envs/virginia.tfvars -auto-approve
 
 ohio:
-	terraform workspace new virginia || \
+	terraform workspace new ohio || \
 	terraform workspace select ohio && \
 	terraform init && \
 	terraform apply -var-file envs/ohio.tfvars -auto-approve
 
 oregon:
-	terraform workspace new virginia || \
+	terraform workspace new oregon || \
 	terraform workspace select oregon && \
 	terraform init && \
 	terraform apply -var-file envs/oregon.tfvars -auto-approve
