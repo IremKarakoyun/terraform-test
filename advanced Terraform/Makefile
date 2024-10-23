@@ -40,4 +40,9 @@ destroy-oregon:
 destroy-all:
 	make destroy-virginia && \
 	make destroy-ohio && \
-	make destroy-oregon && \
+	make destroy-oregon 
+
+all:
+	make virginia && \
+	make ohio && \
+	make oregon
