@@ -1,5 +1,5 @@
-variable region {}
+variable "region" {}
 
-variable key_name {}
+variable "key_name" {}
 
-variable cidr_block {}
+variable "cidr_block" {}
