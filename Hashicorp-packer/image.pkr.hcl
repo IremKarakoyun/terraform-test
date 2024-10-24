@@ -27,4 +27,12 @@ build {
 	sources = [
 		"source.amazon-ebs.image"
 	]
+    provisioner "shell"{
+        inline = [
+            "echo Installin Telnet",
+            "sudo yum install telnet -y",
+            "sudo yum update -y",
+            "sudo useradd admin"
+        ]
+    }
 }
