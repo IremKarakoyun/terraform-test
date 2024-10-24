@@ -5,4 +5,4 @@ sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinu
 sudo yum -y install packer
 
 
-# bash install.sh
+# type "bash install.sh" to execute this file!
